@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    
+    .dots{
+        size: 100%;
+        margin-bottom: 0px;
+        margin-top: 150px;
+    }
+    #startbtn{
+        background-color: #4CAF50;
+        color: white;
+        border: black,0.5px;
+        border-radius: 3px;
+        top: 319px;
+        left: 517px;
+        position: absolute;
+        
+    }
+    #stopbtn{
+        background-color: #4CAF50;
+        color: white;
+        border: black,0.5px;
+        border-radius: 3px;
+        position: absolute;
+        top: 319px;
+        right: 665px;
+
+    }
+.red{
+    background-color: #fa3e19;
+     width: 30px;
+    height: 30px; 
+    border-radius: 100px; 
+    left: 502px;
+    top: 170px;
+    position: fixed;   
+  
+}
+.yellow{
+    background-color: #ffea03;
+     width: 30px;
+     height: 30px;
+    border-radius: 100px; 
+    top: 170px;
+    left: 593px; 
+    position: fixed;
+   
+}
+.blue{
+    background-color: #0ed0e6;
+     width: 30px;
+    height: 30px;
+    border-radius: 100px;
+    bottom:381px;
+    right:657px; 
+    position:fixed;
+    
+}
+.green{
+    background-color: #1fa70a;
+    width: 30px;
+    height: 30px;
+    border-radius:100px;
+    left: 502px;
+    bottom: 381px;
+    position: fixed; 
+}
+
+
+.transred{
+    animation:change-red 2s infinite, change-red-color 8s infinite;
+    animation-timing-function: ease-in-out;
+    
+}
+.transyellow{
+    animation:change-green 2s infinite, change-yellow-color 8s infinite;
+    animation-timing-function: ease-in-out;
+}
+.transblue{
+    animation:change-red 2s infinite, change-blue-color 8s infinite;
+    animation-timing-function: ease-in-out;
+}
+.transgreen{
+    animation:change-green 2s infinite, change-green-color 8s infinite;
+    animation-timing-function: ease-in-out;
+}
+
+   @keyframes change-red {
+  
+  10%{width: 38px;
+  }
+  20%{ width: 48px;
+   transform: scaleX(1.0); }
+  30%{transform:scaleX(1.0);
+    width: 68px;}
+  40%{width: 78px;}
+  50%{width: 90px;
+    transform:scaleX(1.0);
+  }
+  60%{ width: 121px;   transform:scaleX(1.0);}
+  70%{width: 90px;
+    transform:scaleX(1.0);
+  }
+  80%{width: 78px;}
+  90%{transform:scaleX(1.0);
+    width: 58px;}
+    100%{width: 38px;
+  }
+}
+@keyframes change-red-color {
+  25%{ background-color: #ffea03; }
+  50%{background-color: #0ed0e6;}
+  75%{background-color: #1fa70a;}
+  100%{background-color: #fa3e19;
+    
+  }
+}
+@keyframes change-yellow-color {
+  25%{background-color: #0ed0e6; }
+  50%{background-color: #1fa70a;}
+  75%{background-color: #fa3e19;}
+  100%{ background-color: #ffea03;  
+  }
+}
+@keyframes change-blue-color {
+  25%{background-color: #1fa70a; }
+  50%{background-color: #fa3e19;}
+  75%{background-color: #ffea03;}
+  100%{background-color: #0ed0e6;  
+  }
+}
+@keyframes change-green-color {
+  25%{background-color: #fa3e19; }
+  50%{background-color: #ffea03;}
+  75%{background-color: #0ed0e6;}
+  100%{background-color: #1fa70a;  
+  }
+}
+
+
+@keyframes change-green {
+  
+  10%{height: 38px;
+  }
+  20%{ height: 50px;
+   transform: scaleX(1.0); }
+  30%{transform:scaleX(1.0);
+    height: 68px;}
+  40%{height: 78px;}
+  50%{height: 90px;
+    transform:scaleX(1.0);
+  }
+  60%{ height: 117px;   transform:scaleX(1.0);}
+
+    70%{height: 90px;
+    transform:scaleX(1.0);
+  }
+  80%{height: 78px;}
+  90%{transform:scaleX(1.0);
+    height: 50px;}
+    100%{height: 38px;
+  } 
+}
+
+</style>
+
+<body>  
+    <span
+    class="green" id="green">
+    </span>      
+
+        <span class="blue" id="blue">
+            </span>
+        <span
+        class="yellow" id="yellow">
+            </span>
+        <span 
+            class="red" id = "red">
+            </span>   
+        
+     
+   <span><button  id="startbtn" onclick="addClass()">Start </button></span>
+   &nbsp; 
+   <span><button id="stopbtn" onclick="removeClass()">Stop </button></span>
+
+<script>
+   function addClass() {
+   var red = document.getElementById("red");
+   var blue = document.getElementById("blue");
+
+   var yellow = document.getElementById("yellow");
+   var green = document.getElementById("green");
+
+   red.classList.add("transred");
+   blue.classList.add("transblue");
+   
+   yellow.classList.add("transyellow");
+   green.classList.add("transgreen");
+
+}
+function removeClass() {
+   var red = document.getElementById("red");
+
+   var blue = document.getElementById("blue");
+
+   var yellow = document.getElementById("yellow");
+   var green = document.getElementById("green");
+
+   red.classList.remove("transred");
+   blue.classList.remove("transblue");
+   
+   yellow.classList.remove("transyellow");
+   green.classList.remove("transgreen");
+
+}
+</script>
+
+</body>
+</html>
